@@ -21,7 +21,6 @@ $(function () {
                 var grandtotal = (gt + data.price).toFixed(2);
 
                 $("td.grandtotal span").text(grandtotal);
-                /*Урок 26*/
             }).done(function (data) {
                 var url2 = "/cart/PaypalPartial";
 
@@ -32,7 +31,6 @@ $(function () {
                     });
             });
     });
-    /*-----------------------------------------------------------*/
 
     /* Decriment product */
     $(function () {
@@ -66,7 +64,6 @@ $(function () {
 
                         $("td.grandtotal span").text(grandtotal);
                     }
-                    /*Урок 26*/
                 }).done(function (data) {
 
                     var url2 = "/cart/PaypalPartial";
@@ -79,7 +76,6 @@ $(function () {
                 });
         });
     });
-    /*-----------------------------------------------------------*/
 
     /* Remove product */
     $(function () {
@@ -122,4 +118,3 @@ $(function () {
     });
 
 });
-        /*-----------------------------------------------------------*/

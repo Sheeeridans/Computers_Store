@@ -1,10 +1,7 @@
 ﻿$(function () {
 
-    /*
-     Add new category
-     */
+    /*Add new category*/
 
-    /* Урок 9 */
     /* Объявляем и инициализируем нужные переменные */
 
     var newCatA = $("a#newcata"); /*Класс линка добавления*/
@@ -71,24 +68,12 @@
         });
     });
 
-    /////////////////////////////////////////////////////////////
-
-    /*
-     Confirm category deletion
-     */
+    /*Confirm category deletion*/
 
     $("body").on("click", "a.delete", function () {
         if (!confirm("Confirm category deletion")) return false;
     });
 
-    /////////////////////////////////////////////////////////////
-
-
-    /*
-     Rename category script
-     */
-
-    /*Урок 10*/
     /* Rename category */
 
     var originalTextBoxValue;
@@ -138,14 +123,7 @@
         });
     });
 
-    /*-----------------------------------------------------------*/
-
-    /////////////////////////////////////////////////////////////
-
-
-    /*
-     Sorting script
-     */
+    /*Sorting script*/
 
     $("table#pages tbody").sortable({
         items: "tr:not(.home)",

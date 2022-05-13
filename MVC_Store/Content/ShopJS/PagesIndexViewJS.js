@@ -8,11 +8,7 @@
         if (!confirm("Confirm page deletion")) return false;
     });
 
-    /////////////////////////////////////////////////////////////
-
-    /*
-     Sorting script
-     */
+    /*Sorting script*/
 
     $("table#pages tbody").sortable({
         items: "tr:not(.home)",

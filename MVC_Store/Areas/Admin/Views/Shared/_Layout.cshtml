@@ -28,13 +28,11 @@
                 <li class="nav-item">
                     @Html.ActionLink("Товары", "Products", "Shop", "", new { @class = "nav-link" }) 
                 </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Заказы", "Orders", "Shop", "", new { @class = "nav-link" }) 
-                </li>
+                
             </ul>
             <ul class="navbar-nav ml-auto">
-                <li>
-                    <a href="/" class="navbar-brand" target="_blank">Shopping Cart</a>
+                <li class="nav-item">
+                    @Html.ActionLink("Заказы", "Orders", "Shop", "", new { @class = "navbar-brand" })
                 </li>
             </ul>
 
