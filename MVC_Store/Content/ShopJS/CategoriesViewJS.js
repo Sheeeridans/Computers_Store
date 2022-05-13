@@ -23,7 +23,7 @@
         var catName = newCatTextInput.val();
 
         if (catName.length < 3) {
-            alert("Category name must be at least 3 characters long.");
+            alert("Имя категории должно быть больше 3х символов");
             return false;
         }
 
@@ -71,7 +71,7 @@
     /*Confirm category deletion*/
 
     $("body").on("click", "a.delete", function () {
-        if (!confirm("Confirm category deletion")) return false;
+        if (!confirm("Вы хотите удалить категорию?")) return false;
     });
 
     /* Rename category */
@@ -97,7 +97,7 @@
         var url = "/admin/shop/RenameCategory";
 
         if (newCatName.length < 3) {
-            alert("Category name must be at least 3 characters long.");
+            alert("Имя категории должно быть больше 3х символов");
             $this.attr("readonly", true);
             return false;
         }
