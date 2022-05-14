@@ -39,7 +39,7 @@ namespace MVC_Store.Controllers
             // Проверяем соответствие пароля
             if (!model.Password.Equals(model.ConfirmPassword))
             {
-                ModelState.AddModelError("", "Password do not match!");
+                ModelState.AddModelError("", "Пароли не совпадают");
                 return View("CreateAccount", model);
             }
 
@@ -48,7 +48,7 @@ namespace MVC_Store.Controllers
                 // Проверяем имя на уникальность
                 if (db.Users.Any(x => x.Username.Equals(model.Username)))
                 {
-                    ModelState.AddModelError("", $"Username {model.Username} is taken.");
+                    ModelState.AddModelError("", $"Логин {model.Username} занят");
                     model.Username = "";
                     return View("CreateAccount", model);
                 }
@@ -83,7 +83,7 @@ namespace MVC_Store.Controllers
             }
 
             // Записать сообщение в TempData
-            TempData["SM"] = "You are now registered and can login.";
+            TempData["SM"] = "Регистрация прошла успешно";
 
             // Переадресовываем пользователя
             return RedirectToAction("Login");
@@ -121,7 +121,7 @@ namespace MVC_Store.Controllers
 
                 if (!isValid)
                 {
-                    ModelState.AddModelError("", "Invalid username or password.");
+                    ModelState.AddModelError("", "Неверные имя пользователя или пароль");
                     return View(model);
                 }
                 else
@@ -209,7 +209,7 @@ namespace MVC_Store.Controllers
             {
                 if (!model.Password.Equals(model.ConfirmPassword))
                 {
-                    ModelState.AddModelError("", "Passwords do not match.");
+                    ModelState.AddModelError("", "Пароли не совпадают");
                     return View("UserProfile", model);
                 }
             }
@@ -229,7 +229,7 @@ namespace MVC_Store.Controllers
                 // Проверяем имя на уникальность
                 if (db.Users.Where(x => x.Id != model.Id).Any(x => x.Username == userName))
                 {
-                    ModelState.AddModelError("", $"Username {model.Username} alredy exists.");
+                    ModelState.AddModelError("", $"Логин {model.Username} занят");
                     model.Username = "";
                     return View("UserProfile", model);
                 }
@@ -252,7 +252,7 @@ namespace MVC_Store.Controllers
             }
 
             // Устанавливаем сообщение в TempData
-            TempData["SM"] = "You have edited your profile!";
+            TempData["SM"] = "Вы изменили свой профиль!";
 
             if (!userNameIsChanged)
                 // Возвращаем представление с моделью
